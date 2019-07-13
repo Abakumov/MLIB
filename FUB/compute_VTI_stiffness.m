@@ -1,0 +1,15 @@
+function C4d = compute_VTI_stiffness(alpha,beta,epsilon,delta,gamma)
+C = zeros(6,6); 
+C(1,1) = alpha * alpha * (2.*epsilon+1.);
+C(2,2) = alpha * alpha * (2.*epsilon+1.);
+C(3,3) = alpha * alpha;
+C(4,4) = beta * beta;
+C(5,5) = beta * beta;
+C(6,6) = beta * beta * (2.*gamma+1.);
+C(1,3) = sqrt(delta*2.*C(3,3)*(C(3,3)-C(5,5))+(C(3,3)-C(5,5))*(C(3,3)-C(5,5)))-C(5,5);
+C(1,2) = C(1,1)-2.*C(6,6); 
+C(2,3) = C(1,3); 
+C(3,2) = C(2,3); 
+C(2,1) = C(1,2); 
+C(3,1) = C(1,3); 
+C4d = C2d_to_C4d(C);
