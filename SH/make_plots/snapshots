@@ -1,0 +1,4 @@
+#!/bin/csh
+
+suaddhead < xzsnap.p ns=220 ftn=1 | \
+suxmovie width=600 height=600 d1=1 n2=180 loop=1 title="%g" clip=1e-8 

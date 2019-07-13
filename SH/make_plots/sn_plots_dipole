@@ -1,0 +1,28 @@
+#!/bin/csh
+#
+set W = 4
+set H = 4
+set AC = white
+set TS = 15
+set t = "300 ms"
+
+suaddhead < xzsnap.p ns=125 ftn=1 | \
+supsimage width=$W height=$H axescolor=$AC titlesize=$TS \
+          title="Pressure     t=$t" clip=5.e-10 \
+          > sn_dipole_p.ps
+
+suaddhead < xzsnap.s ns=125 ftn=1 | \
+supsimage width=$W height=$H axescolor=$AC titlesize=$TS \
+          title="Shear     t=$t" clip=2.e-9 \
+          > sn_dipole_s.ps
+
+suaddhead < xzsnap.ux ns=125 ftn=1 | \
+supsimage width=$W height=$H axescolor=$AC titlesize=$TS \
+          title="x-Displacement     t=$t" clip=5.e-9 \
+          > sn_dipole_ux.ps
+
+suaddhead < xzsnap.uz ns=125 ftn=1 | \
+supsimage width=$W height=$H axescolor=$AC titlesize=$TS \
+          title="z-Displacement     t=$t" clip=5.e-9 \
+          > sn_dipole_uz.ps
+

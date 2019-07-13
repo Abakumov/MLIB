@@ -1,0 +1,12 @@
+#!/bin/csh
+#
+set HBOX=6
+set WBOX=6
+set D2=3.333333
+set XCUR=1.5
+
+suaddhead < xsect1.p ns=600 ftn=1 | sushw key=dt a=1000 | \
+suwind min=1 max=525 j=1 >p.su
+
+
+suximage < p.su perc=95 d2=$D2 title='1/3' & 

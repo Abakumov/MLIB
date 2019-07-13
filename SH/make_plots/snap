@@ -1,0 +1,3 @@
+#!/bin/csh
+#
+suaddhead < xzsnap.p ns=375 ftn=1 | suxmovie n2=525 title=%g loop=1 clip=1e-10 

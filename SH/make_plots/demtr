@@ -1,0 +1,26 @@
+#!/bin/csh
+
+set BIN = ../bin
+
+set NS = 99
+
+$BIN/rem2d_demtr0.x << EOF
+1
+EOF
+suaddhead < FNA ns=$NS ftn=1 > xsect1_ux.su
+#
+$BIN/rem2d_demtr0.x << EOF
+2
+EOF
+suaddhead < FNA ns=$NS ftn=1 > xsect1_uz.su
+#
+$BIN/rem2d_demtr0.x << EOF
+3
+EOF
+suaddhead < FNA ns=$NS ftn=1 > xsect2_ux.su
+#
+$BIN/rem2d_demtr0.x << EOF
+4
+EOF
+suaddhead < FNA ns=$NS ftn=1 > xsect2_uz.su
+#

@@ -1,0 +1,26 @@
+#!/bin/csh -f
+#
+set BIN = ../bin
+
+set NX = 225
+set NZ = 225
+
+$BIN/rem2d_demsn0.x << EOF
+0
+EOF
+suaddhead < FNA ns=$NZ ftn=1 > xzsnap_p.su
+#
+$BIN/rem2d_demsn0.x << EOF
+1
+EOF
+suaddhead < FNA ns=$NZ ftn=1 > xzsnap_s.su
+#
+$BIN/rem2d_demsn0.x << EOF
+2
+EOF
+suaddhead < FNA ns=$NZ ftn=1 > xzsnap_ux.su
+#
+$BIN/rem2d_demsn0.x << EOF
+3
+EOF
+suaddhead < FNA ns=$NZ ftn=1 > xzsnap_uz.su
