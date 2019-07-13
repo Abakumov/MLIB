@@ -1,0 +1,92 @@
+ parfile for Heidimod
+ 
+ Parameters of Model
+ nz         101
+ nx         102
+ ny         103
+ dz   10.00000    
+ dx   10.00000    
+ dy   10.00000    
+ ndim           3
+ ncomp           3
+ 
+ Parameters of Proc-distribution
+ procz          20
+ procx           4
+ lap           2
+ 
+ Parameters of spatial derivatives
+ ncoef           2
+ 
+ Parameters of Periodic boundaries
+ xcb           0
+ ycb           0
+ 
+ Parameters of Damping boundaries
+ ndamp           1
+ damping  4.9999999E-06
+ 
+ Parameters of viscoelastic functions
+ nrelaxvisc           0
+ 
+ Parameters of simulation length and output
+ nt         130
+ snap_i         100
+ cpiat           0
+ restart           0
+ wantsnap           1
+ wantseis           0
+ wantstress           0
+ geo_depth           3
+ wantarbseis           1
+ narbgeoloc           8
+ 
+ Parameters of wavelet-input file
+ nts          20
+ nscomp           6
+ nsrchist           1
+ dt  2.0000001E-03
+ 
+ Parameters of source geometry
+ src_type           6
+ linesource           0
+ posx         100
+ posy         100
+ posz          50
+ radii          50
+ src_1         333
+ src_depth         200
+ lsz0  8.0000004E-03
+ lsz1  8.0000004E-03
+ lsx0  3.0000000E-03
+ lsx1  7.0000002E-03
+ srcextend           4
+ srcdamp  0.1500000    
+ useloc           1
+ nloc           1
+ srcdelay           0
+ 
+ Parameters of high perfomance computing
+ xlargescale           1
+ ylargescale         103
+ seisint          20
+ wantzsnap           1
+ wantxsnap           1
+ wantysnap           1
+ wantzseis           0
+ wantxseis           0
+ wantyseis           0
+ wantzaseis           1
+ wantxaseis           1
+ wantyaseis           1
+ 
+ Parameters of time reverse modeling
+ trm           0
+ trmi          40
+ wantpe           0
+ wantse           0
+ wantge           0
+ wantme           0
+ currenttrc           1
+ trmswitch           0
+ trm2zero           0

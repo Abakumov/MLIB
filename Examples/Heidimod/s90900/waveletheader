@@ -1,0 +1,9 @@
+ SEPlib Headerfile: quick & dirty: please always check !!!
+ so far: only n1,n2,n3 will be part of output
+  
+ sets next: in="wavelet"
+  
+ n1=000020
+ n2=000006
+ n3=000001
+ n4=1

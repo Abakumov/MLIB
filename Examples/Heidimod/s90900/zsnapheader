@@ -1,0 +1,9 @@
+ SEPlib Headerfile: quick dirty: please always check !!!
+ so far: only n1,n2,n3,n4 will be part of output
+  
+ sets next: in="./zsnap"
+  
+ n1=000101
+ n2=000102
+ n3=000103
+ n4=000001
