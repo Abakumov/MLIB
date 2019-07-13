@@ -1,5 +1,7 @@
 function t = Get_traveltime_3D_iCRS_el_LIA(MM, HH, t0, v0, w, M, N, niter)
-
+    % Abakumov Ivan
+    % University of Hamburg
+    % e-mail: abakumov_ivan@mail.ru
     % 3D iCRS formula
     % ellipsoidal reflector
     % Linearized iterative approach

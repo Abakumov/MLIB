@@ -1,5 +1,7 @@
 function t = Get_traveltime_3D_iCRS(MM, HH, t0, w, M, N, niter)
-
+    % Abakumov Ivan
+    % University of Hamburg
+    % e-mail: abakumov_ivan@mail.ru
     % 3D iCRS formula
     % size(w) = 2 x 1
     % size(M) = 2 x 2

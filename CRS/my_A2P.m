@@ -1,6 +1,10 @@
 function [ alpha, beta, KNIP, KN ] = my_A2P(v0, w, M, N)
-%my_A2P get stacking parameters from wavefield attributes 
-% see equation 1.20
+    % Abakumov Ivan
+    % University of Hamburg
+    % e-mail: abakumov_ivan@mail.ru
+    %my_A2P get stacking parameters from wavefield attributes 
+    % see equation 1.20
+    % Abakumov, I. (2017). Systematic analysis of double-square-root-based stacking operators
 
     beta = atan(w(2)/w(1)); 
     

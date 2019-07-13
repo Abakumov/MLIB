@@ -1,5 +1,9 @@
 function R = Get_Rmatrix_3x3(alpha, beta)
 
+    % Abakumov Ivan
+    % University of Hamburg
+    % e-mail: abakumov_ivan@mail.ru
+
 % Get rotation matrix from ray-centered to Cartisian coordinates
 % alpha is a dip angle
 % beta is an azimuthal angle

@@ -1,5 +1,7 @@
 function t = Get_traveltime_3D_DSR(MM, HH, t0, w, M, N)
-
+    % Abakumov Ivan
+    % University of Hamburg
+    % e-mail: abakumov_ivan@mail.ru
     % 3D DSR formula
     % see equation 1.19
     % size(w) = 2 x 1

@@ -1,4 +1,4 @@
-function T = Get_traveltime_2D_DSR_PS(MM, HH, model)
+function T = Get_traveltime_2D_DSR(MM, HH, model)
 
 % Calculate DSR-PS traveltime approximation
 % Abakumov Ivan
