@@ -87,7 +87,7 @@ elseif acquisition == 3
 %     Xg(1,:) = mx + hx + X0(1);
 %     Xg(2,:) = my + hy + X0(2);
     
-    acq = MLD('/home/zmaw/u250128/Desktop/MLIB/CRS/models/acquisition_3.mat');
+    acq = MLD([mlibfolder '/CRS/models/acquisition_3.mat']);
     Xs = acq.Xs; 
     Xg = acq.Xg;
     clear hx hy mx my mmax mmod hmod hmax haz maz fold
@@ -149,7 +149,7 @@ end
 
 if model > 100
     target_model = model - floor(model/100)*100; 
-    CRS_param = MLD(['/home/zmaw/u250128/Desktop/MLIB/CRS/models/model_' num2str(target_model) '_CRS_param.mat']); 
+    CRS_param = MLD([mlibfolder '/CRS/models/model_' num2str(target_model) '_CRS_param.mat']); 
     smodel = Get_simplified_model(CRS_param);
     R = smodel.R; 
     X0 = smodel.x0; 
