@@ -1,0 +1,78 @@
+#!/bin/sh
+
+ln -sf ../src/fleg.num fleg.num
+
+
+i=300
+
+while [ "$i" -lt "701" ]
+do 
+rm -f temp.su
+rm -f shot.su
+
+########################fort.7 new define
+
+rm -f fort.7
+echo "ACOU" >fort.7
+echo "SIZE         1000 800 25. 25. 0 0 0 1">>fort.7
+echo "TIME         0. 10.  0.004  100 2900.">>fort.7
+echo "FREQ         2  0. 30.  0  0.">>fort.7
+echo "SECT         1">>fort.7
+echo "             100  201 0 401 2 0">>fort.7
+echo "STRU         -99 0">>fort.7
+#echo "STRU         1 0">>fort.7
+#echo "             2 2 0 0">>fort.7
+#echo "              1 1000 0 0 0 0 0 0 0 0">>fort.7
+#echo "             240  240 0 0 0 0 0 0 0 0">>fort.7
+#echo "MATE         2 0">>fort.7
+#echo "             1000. 1500.">>fort.7
+#echo "             1500. 2500.">>fort.7
+echo "SOUR         1">>fort.7
+echo "             $i 241">>fort.7
+echo "ABSO         30 0.15 0.05">>fort.7
+echo "START">>fort.7
+
+##########################START REM2D
+time ../bin/int.x
+time ../bin/besl.x
+time ../bin/main.x
+
+##########################HEARED WORDS SETTING
+
+BIN=../bin
+NS=2500
+
+$BIN/rem2d_demtr0.x << EOF
+1
+EOF
+suaddhead < FNA ns=$NS ftn=1 | sushw key=dt a=4000 > temp.su
+
+ddx=25								# CHANGE HERE Distance between sources
+GX=`bc -l <<-END
+   ($i-100)*$ddx								# ddx  - distance between greed points
+END`
+
+
+sushw < temp.su key=sx a=$GX |
+sushw key=gx a=0 b=50 |
+suchw key1=offset key2=gx key3=sx a=0 b=1 c=-1 d=1|
+suchw key1=cdp    key2=gx key3=sx a=0 b=1 c=1 d=2 > shot.su
+
+surange < shot.su
+
+mv shot.su ./shot$i.su
+
+echo "Schot number $i is done"
+
+i=`expr $i + 16`
+done
+
+cat shot*.su > tmp
+susort <tmp cdp offset > seismogram.su
+
+rm shot* tmp
+
+echo "Seismograms are generated"
+
+
+exit
