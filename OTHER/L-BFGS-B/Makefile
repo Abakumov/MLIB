@@ -1,0 +1,51 @@
+# Linux settings.
+
+# FU Berlin
+MEX         = /remote/soft/MATLAB/R2017a/bin/mex
+MEXSUFFIX   = mexa64
+MATLAB_HOME = /remote/soft/MATLAB/R2017a
+CXX         = g++
+F77         = gfortran
+CFLAGS      = -O3 -fPIC -pthread
+FFLAGS      = -O3 -fPIC -fexceptions 
+
+
+# Shell Rijswijk
+# MEX         = /glb/apps/sss/matlab/8.0/bin/mex
+# MEXSUFFIX   = mexa64
+# MATLAB_HOME = /glb/apps/sss/matlab/8.0/
+# CXX         = g++
+# F77         = gfortran
+# CFLAGS      = -O3 -fPIC -pthread
+# FFLAGS      = -O3 -fPIC -fexceptions 
+
+# Hamburg university
+# MEX         = /opt/zmaw/sw/squeeze-x64/matlab-r2013a/bin/mex
+# MEXSUFFIX   = mexa64
+# MATLAB_HOME = /opt/zmaw/sw/squeeze-x64/matlab-r2013a/
+# CXX         = g++
+# F77         = gfortran
+# CFLAGS      = -O3 -fPIC -pthread
+# FFLAGS      = -O3 -fPIC -fexceptions 
+
+TARGET = lbfgsb.$(MEXSUFFIX)
+OBJS   = solver.o matlabexception.o matlabscalar.o matlabstring.o   \
+         matlabmatrix.o arrayofmatrices.o program.o matlabprogram.o \
+         lbfgsb.o
+
+CFLAGS += -Wall -ansi -DMATLAB_MEXFILE
+
+all: $(TARGET)
+
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -I$(MATLAB_HOME)/extern/include -o $@ -c $^
+
+%.o: %.f
+	$(F77) $(FFLAGS) -o $@ -c $^
+
+$(TARGET): $(OBJS)
+	$(MEX) -cxx CXX=$(CXX) CC=$(CXX) FC=$(F77) LD=$(CXX) -lgfortran -lm \
+        -O -output $@ $^
+
+clean:
+	rm -f *.o $(TARGET)
