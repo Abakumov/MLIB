@@ -1,3 +1,6 @@
+% Abakumov Ivan
+% last update: 30 September 2014
+
 G.nx=1000;
 G.nz=1000;
 
