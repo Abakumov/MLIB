@@ -35,7 +35,11 @@ if strlength == 5
                 if innum < 10000
                     outstr = ['0' num2str(innum)];
                 else
-                    disp('Program input is integer positive laues less that 10000');
+                    if innum < 100000
+                        outstr = num2str(innum);
+                    else
+                        disp('Program input is integer positive laues less that 100000');
+                    end
                 end
             end
         end
@@ -53,12 +57,25 @@ elseif strlength == 4
                 if innum < 10000
                     outstr = num2str(innum);
                 else
-                    disp('Program input is integer positive laues less that 1000');
+                    disp('Program input is integer positive laues less that 10000');
                 end
             end
         end
     end
+elseif strlength == 3
+    if innum < 10
+        outstr = ['00' num2str(innum)];
+    else
+        if innum < 100
+            outstr = ['0' num2str(innum)];
+        else 
+            if innum < 1000
+                outstr = num2str(innum);
+            else
+                disp('Program input is integer positive laues less that 1000');
+            end
+        end
+    end
 else
-    disp('Variable strlength not properly set (possible values strlength=4 or = 5)');
-    
+    disp('Variable strlength not properly set (possible values strlength=3,4 or 5)'); 
 end
