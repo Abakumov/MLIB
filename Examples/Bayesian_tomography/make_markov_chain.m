@@ -18,7 +18,7 @@ function [saveF, saveX] = make_markov_chain(G,acq,XX,ZZ,texact,sigma,Xmin,Xmax,V
 
             % add the update (all if pdf is low, only one component if pdf is
             % high)
-            if F > 0.1
+            if F > 0.0001
                 j = i - floor(i/120)*120 +1;
                 Xn = X;
                 Xn(j)=X(j)+V(j);  
