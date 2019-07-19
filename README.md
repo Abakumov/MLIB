@@ -25,6 +25,4 @@ Virtual source method
 
 I/O of X-Well, OBN, Microseismic, 2D/3D marine and field datasets. 
 
-I found it helpful to collect the commonly used functions in the library, called MLIB. I also gathered Matlab-related open-source codes, that could be useful for seismic problems. In this script, I will demonstrate some tools of the MLIB library and several rarely used, but extremely useful features of MATLAB. In particular, I will demonstrate how to: 
-add MLIB library read, write and analize SEGY/SU/SEG2 files use Eikonal solvers and ray tracing run 2D FD modeling perform quasi-Newton optimization method
-I hope that MLIB library might be a usefull tool for fresh geophyscs students starting with MATLAB.
+I found it helpful to collect the commonly used functions in the library, called MLIB. I also gathered Matlab-related open-source codes, that could be useful for seismic problems. I hope that MLIB library might be a usefull tool for geophyscs students starting with MATLAB.
