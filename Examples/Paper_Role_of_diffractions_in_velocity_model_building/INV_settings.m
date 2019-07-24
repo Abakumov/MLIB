@@ -1,5 +1,5 @@
 
-thisfolder = pwd;
+thisfolder = [mlibfolder '/Examples/Paper_Role_of_diffractions_in_velocity_model_building']
 
 %% Load files
 
@@ -47,8 +47,8 @@ target.xx = 151:351;
 target.zz = 121:181;
 
 %% Make weight function
-%weight = MLD([thisfolder '/data/OBN_DIFF_weight.mat']);
-% 
+weight = MLD([thisfolder '/data/OBN_DIFF_weight.mat']);
+% % 
 % weight = ones(G.nx, G.nz); 
 % wind = 80; % in meter 
 % pwind = 28;  
