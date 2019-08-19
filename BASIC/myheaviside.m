@@ -7,7 +7,7 @@ function y = myheaviside(x)
 
     y = zeros(size(x));
     ind = (x>=0);
-    y(ind) = x(ind);
+    y(ind) = 1;
 
 end
 
