@@ -1,4 +1,5 @@
 function a = ricker(fpeak,t)
+
 %RICKER 
 % Ricker wavelet in time
 % fpeak is peak frequency in Hz
