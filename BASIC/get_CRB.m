@@ -7,8 +7,6 @@ function vartau = get_CRB(SNR,beta)
 
 % Cramer Rao Bound
 
-
-
 vartau = 1./beta.^2./SNR;
 
 
