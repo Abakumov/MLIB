@@ -31,9 +31,9 @@ I found it helpful to collect the commonly used functions in the library, called
 # Citation
 Please cite this software version as:
 
-@misc{dramsch2019complex, 
+@misc{abakumov2019MLIB, 
     title     = {MLIB}, 
-    url       = {https://github.com/Abakumov/MLIB/edit/master/README.md}, 
+    url       = {https://github.com/Abakumov/MLIB/}, 
     DOI       = {}, 
     publisher = {github}, 
     author    = {Abakumov, Ivan}, 
