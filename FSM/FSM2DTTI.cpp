@@ -1,5 +1,6 @@
 // Fast sweeping factored TTI eikonal solver (2D)
 // Original C++ code by Umair bin Waheed
+// https://www.linkedin.com/in/umairbinwaheed/
 // Mex wrapper by Ivan Abakumov
 // Freie Universität Berlin
 // e-mail: abakumov_ivan@mail.ru
