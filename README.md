@@ -26,3 +26,16 @@ Virtual source method
 I/O of X-Well, OBN, Microseismic, 2D/3D marine and field datasets. 
 
 I found it helpful to collect the commonly used functions in the library, called MLIB. I also gathered Matlab-related open-source codes, that could be useful for seismic problems. I hope that MLIB library might be a usefull tool for geophyscs students starting with MATLAB.
+
+
+# Citation
+Please cite this software version as:
+
+@misc{abakumov2019MLIB, 
+    title     = {MLIB}, 
+    url       = {https://github.com/Abakumov/MLIB/}, 
+    DOI       = {}, 
+    publisher = {github}, 
+    author    = {Abakumov, Ivan}, 
+    year      = {2019}
+}
